@@ -12,14 +12,50 @@
     <script src="/script.js" defer></script>
   </head>  
   <body>
+    <style>
+       .button {
+      border: none;
+      display: block;
+      text-align: center;
+      cursor: pointer;
+      text-transform: uppercase;
+      outline: none;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+      font-weight: 300;
+      font-size: 15px;
+      background-color: blue;
+      padding: 15px 45px;
+      margin: 0 auto;
+      }
+  
+      .button:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 400%;
+      width: 140%;
+      background: lightblue;
+      -webkit-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+      -webkit-transform: translateX(-100%) translateY(-25%) rotate(45deg);
+      transform: translateX(-100%) translateY(-25%) rotate(45deg);
+      }
+      .button:hover:after {
+      -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+      transform: translateX(-9%) translateY(-25%) rotate(45deg);
+      }
+    </style>
 	<h1 id="titre">Bonjour</h1>
-<button id="btn">ouah</button>
+<button id="btn" type="button" class="button">ouah</button>
     <script type="text/javascript">
 		document.getElementById("btn").onclick = function(){
     document.getElementById("titre").style.color = 'Black'}
 	</script>
     <div id="clickme" onclick="affiche_text('Aurevoir')">
-      <button>ouah 2</button>
+      <button type="button" class="button">ouah 2</button>
 </div>
     
 <script type="text/javascript">
@@ -29,7 +65,7 @@
 
 </script>
 <div onclick="window.document.body.innerHTML='';" />
-	<button>ninja</button>
+	<button type="button" class="button">ninja</button>
     
     <script>
 var message="ALEX EST VRAIMENT NUL"
@@ -87,6 +123,5 @@ flashing=setInterval("neon()",flashspeed)
 }
 beginneon()
 </script>
-    
 </body>
 </html>
